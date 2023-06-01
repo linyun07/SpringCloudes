@@ -1,0 +1,24 @@
+#Feign决定模块内的负载均衡 Gateway决定模块外的负载均衡
+#过滤器：(default-filters)默认>(filters)路由>(实现GlobalFilter)全局
+server:
+  port: 10010
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: 47.120.37.50:8848 #nacos地址
+    gateway:
+      routes:
+        - id: user-service #路由标识 必须唯一
+          uri: lb://userServer #路由目标地址 你的模块名称
+          predicates: #路由断言
+          - Path=/user/** #路由断言，判断路径是否以user开头
+
+        - id: order-service #路由标识 必须唯一
+          uri: lb://orderServer #路由目标地址 你的模块名称
+          predicates: #路由断言
+            - Path=/order/** #路由断言，判断路径是否以order开头
+      default-filters:
+
+
