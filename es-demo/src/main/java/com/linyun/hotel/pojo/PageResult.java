@@ -1,6 +1,8 @@
 package com.linyun.hotel.pojo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -8,15 +10,11 @@ import java.util.List;
  * @author linyun
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PageResult {
     private Long total;
-    private List<Hotel> hotels;
+    private List<HotelDoc> hotels;
 
-    public PageResult() {
-    }
 
-    public PageResult(Long total, List<Hotel> hotels) {
-        this.total = total;
-        this.hotels = hotels;
-    }
 }
