@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    host: 47.120.37.50 #主机名
+    port: 5672 #端口号
+    virtual-host: / #虚拟主机
+    username: linyun
+    password: 123456
