@@ -4,4 +4,4 @@ spring:
     port: 5672 #端口号
     virtual-host: / #虚拟主机
     username: linyun
-    password: 123456
+    password: "123456"
