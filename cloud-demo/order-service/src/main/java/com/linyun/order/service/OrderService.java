@@ -1,5 +1,6 @@
 package com.linyun.order.service;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.linyun.feign.clients.UserClient;
 import com.linyun.feign.pojo.User;
 import com.linyun.order.mapper.OrderMapper;
@@ -33,5 +34,10 @@ public class OrderService {
         order.setUser(user);
         // 4.返回
         return order;
+    }
+
+    @SentinelResource("goods")
+    public void queryGoods(String message){
+        System.err.println(message);
     }
 }

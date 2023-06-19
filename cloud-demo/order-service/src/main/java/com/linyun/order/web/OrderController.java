@@ -20,4 +20,20 @@ public class OrderController {
         // 根据id查询订单并返回
         return orderService.queryOrderById(orderId);
     }
+
+    @GetMapping("query")
+    public String queryOrder(){
+        orderService.queryGoods("查询成功");
+        return "查询成功";
+    }
+    @GetMapping("update")
+    public String updateOrder(){
+        return "修改成功";
+    }
+
+    @GetMapping("save")
+    public String saveOrder(){
+        orderService.queryGoods("新增成功");
+        return "新增成功";
+    }
 }
